@@ -1,0 +1,32 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/modules.  Generated from modules.in by configure.
+##
+proc ModulesHelp { } {
+        global version prefix
+        puts stderr "\tusb-ai16-16/latest - loads environments for samples of the usb-ai16-16 product line"
+}
+
+prereq          usb
+prereq          aio
+prereq          samples
+
+module-whatis	"loads the usb-ai16-16 product samples environment"
+
+# for Tcl script use only
+
+set             AIO_PRODUCT         USB-AI16-16
+
+if { [catch { set SAMPLE_USB_ROOT $::env(SAMPLE_USB_ROOT) } ] } { 
+    set SAMPLE_USB_ROOT  "\${SAMPLE_USB_ROOT}"
+}
+set             AIO_USBAI1616_DIR   ${SAMPLE_USB_ROOT}/${AIO_PRODUCT}
+
+append-path     AIO_PRODUCTS        ${AIO_PRODUCT}
+setenv     AIO_USBAI1616_DIR        ${SAMPLE_USB_ROOT}/${AIO_PRODUCT}
+
+
+set-alias build_usbai1616 "cd \\${AIO_USBAI1616_DIR} && make && cd -"
+set-alias clean_usbai1616 "cd \\${AIO_USBAI1616_DIR} && make clean"

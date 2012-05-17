@@ -1,0 +1,17 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/std_usb_dare_ai16. Creates environment for ai16 testing
+##
+proc ModulesHelp { } {
+        global version prefix
+        puts stderr "\tmodulefiles/std_usb_dare_ai16 - Standard USB, Dare settings, AI16 product
+}
+
+
+
+module load usb/installed
+module load aio/dare
+module load samples/latest
+module load products/usb-ai16-16/latest

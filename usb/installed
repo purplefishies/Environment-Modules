@@ -1,0 +1,22 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/usb/installed : module for compiling with generic installed USB
+##
+proc ModulesHelp { } {
+        global version prefix
+        puts stderr "\tLoads the USB core compilation functionality"
+        # puts stderr "\n\tThis adds $prefix/* to several of the"
+        # puts stderr "\tenvironment variables."
+        # puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"Loads the USB compilation environment"
+
+# for Tcl script use only
+
+append-path     CPATH           /usr/include/libusb-1.0
+append-path     INCLUDE_DIRS    /usr/include
+append-path     LIB_DIRS        /lib/i386-linux-gnu
+
