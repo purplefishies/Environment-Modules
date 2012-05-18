@@ -27,7 +27,7 @@ setenv          AIO_ROOT            ${AIO_ROOT}
 setenv          AIO_LIB_DIR         ${AIO_ROOT}/lib
 setenv          AIO_CLASSLIB_DIR    ${AIO_ROOT}/classlib
 
-append-path     CPATH               ${AIO_CLASSLIB_DIR}
+append-path     CPATH               ${AIO_LIB_DIR}
 
 set-alias build_usb "cd ${AIO_LIB_DIR} && make ${MAKE_ARGS} && cd -"
 set-alias clean_usb "cd ${AIO_LIB_DIR} && make clean"
