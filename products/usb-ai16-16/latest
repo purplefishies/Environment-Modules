@@ -32,4 +32,4 @@ append-path     INC_PATH            ${SAMPLE_USB_ROOT}/${AIO_PRODUCT}/lib
 
 set-alias build_usbai1616 "cd \\${AIO_USBAI1616_DIR} && make \$1 AIOUSBLIBDIR=\${AIO_LIB_DIR} DEBUG=1 && cd -"
 set-alias clean_usbai1616 "cd \\${AIO_USBAI1616_DIR} && make clean"
-set-alias mmake           "make \$1 AIOUSBLIBDIR=\${AIO_LIB_DIR} DEBUG=1"
+set-alias mmake           "make \$1 AIOUSBLIBDIR=\${AIO_LIB_DIR} AIOUSBCLASSLIBDIR=\${AIO_CLASSLIB_DIR}  DEBUG=1"
