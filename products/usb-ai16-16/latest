@@ -20,16 +20,18 @@ module-whatis	"loads the usb-ai16-16 product samples environment"
 set             AIO_PRODUCT         USB-AI16-16
 
 if { [catch { set SAMPLE_USB_ROOT $::env(SAMPLE_USB_ROOT) } ] } { 
-    set SAMPLE_USB_ROOT  "\${SAMPLE_USB_ROOT}"
+       set SAMPLE_USB_ROOT  "\${SAMPLE_USB_ROOT}"
+#      throw UnsetVariable "You must set SAMPLE_USB_ROOT"
 }
 set             AIO_USBAI1616_DIR   ${SAMPLE_USB_ROOT}/${AIO_PRODUCT}
 
 append-path     AIO_PRODUCTS        ${AIO_PRODUCT}
-setenv     AIO_USBAI1616_DIR        ${SAMPLE_USB_ROOT}/${AIO_PRODUCT}
+setenv          AIO_USBAI1616_DIR        ${SAMPLE_USB_ROOT}/${AIO_PRODUCT}
 
 append-path     INC_PATH            ${SAMPLE_USB_ROOT}/${AIO_PRODUCT}/lib
 
 
-set-alias build_usbai1616 "cd \\${AIO_USBAI1616_DIR} && make \$1 AIOUSBLIBDIR=\${AIO_LIB_DIR} DEBUG=1 && cd -"
-set-alias clean_usbai1616 "cd \\${AIO_USBAI1616_DIR} && make clean"
+set-alias build_samples "cd \\${AIO_USBAI1616_DIR} && make AIOUSBLIBDIR=\${AIO_LIB_DIR} DEBUG=1 && cd -"
+
+set-alias clean_samples "cd \\${AIO_USBAI1616_DIR} && make all_clean"
 set-alias mmake           "make \$1 AIOUSBLIBDIR=\${AIO_LIB_DIR} AIOUSBCLASSLIBDIR=\${AIO_CLASSLIB_DIR}  DEBUG=1"

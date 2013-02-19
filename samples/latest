@@ -6,7 +6,7 @@
 ##
 proc ModulesHelp { } {
         global version prefix
-        puts stderr "\taio - loads Dare's version of the AIO build environment"
+        puts stderr "\taio - load Latest version of Samples "
 }
 
 module-whatis	"loads the Samples root directory environment"
@@ -15,8 +15,9 @@ prereq          usb
 prereq          aio
 
 # for Tcl script use only
-set	aio_version	latest
+set	samples_version        latest
 
 set     AIO_SAMPLES_ROOT    $::env(AIO_LIB_DIR)/samples
+setenv  AIO_SAMPLES_ROOT    $AIO_SAMPLES_ROOT
 
 
