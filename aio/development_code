@@ -7,9 +7,6 @@
 proc ModulesHelp { } {
         global version prefix
         puts stderr "\taio - loads the AIO build environment"
-#        puts stderr "\n\tThis adds $prefix/* to several of the"
-#        puts stderr "\tenvironment variables."
-#        puts stderr "\n\tVersion $version\n"
 }
 
 module-whatis	"loads the modules environment"
@@ -29,7 +26,7 @@ setenv          AIO_CLASSLIB_DIR    ${AIO_ROOT}/classlib
 
 append-path     CPATH               ${AIO_LIB_DIR}
 
-set-alias build_classlib "cd ${AIO_CLASSLIB_DIR} && make && cd -"
-set-alias build_usb "build_classlib && cd ${AIO_LIB_DIR} && make ${MAKE_ARGS} && cd -"
+set-alias build_classlib "cd ${AIO_CLASSLIB_DIR} && make DEBUG=-DDEBUG && cd -"
+set-alias build_usb "build_classlib && cd ${AIO_LIB_DIR} && make ${MAKE_ARGS} DEBUG=-DDEBUG && cd -"
 set-alias clean_classlib "cd ${AIO_CLASSLIB_DIR} && make clean && cd -"
 set-alias clean_usb "cd ${AIO_LIB_DIR} && make clean"

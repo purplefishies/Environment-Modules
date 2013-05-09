@@ -26,5 +26,5 @@ setenv          AIO_CLASSLIB_DIR    ${AIO_ROOT}/classlib
 
 append-path     CPATH               ${AIO_LIB_DIR}
 
-set-alias build_usb "cd ${AIO_LIB_DIR} && make ${MAKE_ARGS} && cd -"
+set-alias build_usb "cd ${AIO_LIB_DIR} && make ${MAKE_ARGS} DEBUG=-DDEBUG && cd -"
 set-alias clean_usb "cd ${AIO_LIB_DIR} && make clean"

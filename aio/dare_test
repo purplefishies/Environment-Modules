@@ -6,10 +6,7 @@
 ##
 proc ModulesHelp { } {
         global version prefix
-        puts stderr "\taio - loads the AIO build environment"
-#        puts stderr "\n\tThis adds $prefix/* to several of the"
-#        puts stderr "\tenvironment variables."
-#        puts stderr "\n\tVersion $version\n"
+        puts stderr "\taio - loads Dare's version of the AIO build environment"
 }
 
 module-whatis	"loads the modules environment"
@@ -17,7 +14,7 @@ module-whatis	"loads the modules environment"
 # for Tcl script use only
 set	aio_version	latest
 
-set     AIO_ROOT            $::env(HOME)/Projects/Autofirmware_builds/AIOUSB-Latest/USB/AIOUSB
+set     AIO_ROOT            $::env(HOME)/Projects/New_AIO_Code/AIOUSB-1.93/USB/AIOUSB/
 set     AIO_LIB_DIR         ${AIO_ROOT}/lib
 set     AIO_CLASSLIB_DIR    ${AIO_ROOT}/classlib
 set     MAKE_ARGS           "COMMONOPTS=\"-c -Wall -pthread -fPIC -IPWD -I../../AIOUSB/lib/ -I/usr/include/libusb-1.0\""
