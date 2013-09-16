@@ -1,0 +1,23 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/usb/installed : module for loading the appropriate scala environment
+##
+proc ModulesHelp { } {
+        global version prefix
+        puts stderr "\tLoads the 2.9.1 Scala environment
+
+}
+
+module-whatis	"Loads the USB compilation environment"
+
+# for Tcl script use only
+
+set    SCALA_HOME                 $::env(HOME)/Tools/Scala/2.9.1
+setenv SCALA_HOME                 $SCALA_HOME
+
+append-path     MANPATH         $SCALA_HOME/man
+prepend-path     PATH            $SCALA_HOME/bin
+append-path     CLASSPATH       $SCALA_HOME/lib
+
