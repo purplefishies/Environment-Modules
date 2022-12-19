@@ -9,6 +9,13 @@ whatis("Description: Gstreamer")
 
 prepend_path( "PATH", os.getenv("TOOLSDIR")   .. "/gstreamer-1.18.6/bin" )
 prepend_path( "LD_LIBRARY_PATH", os.getenv("TOOLSDIR")   .. "/gstreamer-1.18.6/lib" )
+prepend_path( "LD_LIBRARY_PATH", os.getenv("TOOLSDIR")   .. "/gstreamer-1.18.6/lib/x86_64-linux-gnu" )
+prepend_path( "LD_LIBRARY_PATH", os.getenv("TOOLSDIR")   .. "/gstreamer-1.18.6/lib/x86_64-linux-gnu/gstreamer-1.0" )
+
+
+prepend_path( "PYTHONPATH" , os.getenv("TOOLSDIR")   .. "/gstreamer-1.18.6/lib/python3.8/site-packages" )
+prepend_path( "GI_TYPELIB_PATH" , os.getenv("TOOLSDIR")   .. "/gstreamer-1.18.6/lib/x86_64-linux-gnu/girepository-1.0" )
+
 prepend_path( "PKG_CONFIG_PATH", os.getenv("TOOLSDIR")   .. "/gstreamer-1.18.6/lib/pkgconfig" )
 prepend_path( "PKG_CONFIG_PATH", os.getenv("TOOLSDIR")   .. "gstreamer-1.18.6/lib/x86_64-linux-gnu/pkgconfig")
 
